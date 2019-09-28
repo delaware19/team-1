@@ -27,9 +27,11 @@ CREATE TABLE `account` (
   `acct_username` varchar(32) NOT NULL,
   `acct_password` varchar(32) NOT NULL,
   `acct_email` varchar(64) NOT NULL,
+  `salt` int(11) NOT NULL,
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `acct_username` (`acct_username`),
-  UNIQUE KEY `acct_email` (`acct_email`)
+  UNIQUE KEY `acct_email` (`acct_email`),
+  UNIQUE KEY `salt` (`salt`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,6 +45,31 @@ LOCK TABLES `account` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `child`
+--
+
+DROP TABLE IF EXISTS `child`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `child` (
+  `child_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `child_first_name` varchar(20) NOT NULL,
+  `child_last_name` varchar(20) NOT NULL,
+  `child_gender` varchar(10) NOT NULL,
+  PRIMARY KEY (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `child`
+--
+
+LOCK TABLES `child` WRITE;
+/*!40000 ALTER TABLE `child` DISABLE KEYS */;
+/*!40000 ALTER TABLE `child` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `image`
 --
 
@@ -53,7 +80,7 @@ CREATE TABLE `image` (
   `image_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `image` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`image_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,6 +89,7 @@ CREATE TABLE `image` (
 
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
+INSERT INTO `image` VALUES (1,'hello.jpg');
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,10 +104,12 @@ CREATE TABLE `post` (
   `post_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `post_text` varchar(256) NOT NULL,
   `post_image` smallint(5) unsigned NOT NULL,
+  `post_acct` smallint(5) unsigned NOT NULL,
+  `associated_child` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`post_id`),
   KEY `post_image` (`post_image`),
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`post_image`) REFERENCES `image` (`image_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,6 +118,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
+INSERT INTO `post` VALUES (1,'Hello! This is a small test.',1,0,0);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -100,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-27 23:20:15
+-- Dump completed on 2019-09-28  1:48:50
