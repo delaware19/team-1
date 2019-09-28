@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['dropbtn'])){
+if(isset($_POST['myList'])){
     $selected_val = $_POST['myList'];
     switch ($selected_val ) {
         case 'value1':
