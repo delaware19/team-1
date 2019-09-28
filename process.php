@@ -2,9 +2,10 @@
 include_once 'dbh.php';
 
 $tablename = "child";
-$gender = "";
-$agebracket = "";
-$ethnicity = "";
+$firstname = "john"
+$gender = "male";
+$agebracket = "child";
+$ethnicity = "hispanic";
 if(isset($_POST['dropbtn'])){
     $selected_val = $_POST['myList'];
     switch ($selected_val ) {
