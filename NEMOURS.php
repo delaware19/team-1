@@ -51,12 +51,13 @@ include_once 'dbh.php';
 
 </form>
 <?php
-$sql = "SELECT * FROM account;";
+$sql = "SELECT * FROM child;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 if ($resultCheck > 0) {
-    while($row = mysqli_fetch_assoc($result)){
-        echo $row['acct_username'] . "<br>";
+    echo "Made it here";
+    while ($row = mysqli_fetch_assoc($result)){
+        echo $row[child_first_name] . "<br>";
     }
 }
 ?>
