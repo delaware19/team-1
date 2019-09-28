@@ -28,7 +28,7 @@ if(isset($_POST['dropbtn'])){
 }
 
 
-$sql = "Insert into nemours ("$selection")";//add the extra information
+$sql = "Insert into nemours ($selection)";//add the extra information
 $result = mysqli_query($conn, $sql);
 echo "finished";
 ?>
