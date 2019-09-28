@@ -78,7 +78,8 @@ DROP TABLE IF EXISTS `image`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `image` (
   `image_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `image` varchar(128) DEFAULT NULL,
+  `image_name` varchar(255) DEFAULT NULL,
+  `image_dir` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`image_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
