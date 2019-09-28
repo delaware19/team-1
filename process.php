@@ -30,12 +30,7 @@ if(isset($_POST['dropbtn'])){
     }
 }
 
-
-<<<<<<< HEAD
-$sql = "Insert into nemours, $tablename($gender, $agebracket, $ethnicity)";//add the extra information
-=======
-$sql = "Insert into nemours ($selection)";//add the extra information
->>>>>>> b53a7f3bd10430927e8efc91dd95199040fb062e
+$sql = "Insert into nemours, $tablename($gender, $agebracket, $ethnicity)";
 $result = mysqli_query($conn, $sql);
 echo "finished";
 ?>
