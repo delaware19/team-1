@@ -1,0 +1,13 @@
+$ cat ~/.gitconfig
+[user]
+    name = Huilang_Chen
+    email = huilangchen19@gmail.com
+[core]
+    editor = editor
+    pager = most
+[remote * origin]
+	url = https://github.com/delaware19/team-1.git
+[color]
+    ui = auto
+[merge]
+    conflictstyle = diff3
