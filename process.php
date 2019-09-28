@@ -2,7 +2,7 @@
 include_once 'dbh.php';
 
 $tablename = "child";
-$firstname = "john"
+$firstname = "john";
 $gender = "male";
 $agebracket = "child";
 $ethnicity = "hispanic";
