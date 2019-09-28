@@ -54,8 +54,9 @@ DROP TABLE IF EXISTS `child`;
 CREATE TABLE `child` (
   `child_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `child_first_name` varchar(20) NOT NULL,
-  `child_last_name` varchar(20) NOT NULL,
   `child_gender` varchar(10) NOT NULL,
+  `child_age_bracket` varchar(20) NOT NULL,
+  `child_ethnicity` varchar(20) NOT NULL,
   PRIMARY KEY (`child_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -90,7 +91,6 @@ CREATE TABLE `image` (
 
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
-INSERT INTO `image` VALUES (1,'hello.jpg');
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,4 +132,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-28  1:48:50
+-- Dump completed on 2019-09-28  7:20:45
