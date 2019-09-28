@@ -32,7 +32,15 @@ if(isset($_POST['dropbtn'])){
 }
 
 echo "Insert into $tablename('child_first_name', 'child_gender', 'child_age_bracket', 'child_ethnicity') VALUES ($firstname, $gender, $agebracket, $ethnicity)";
-$sql = "Insert into $tablename($gender, $agebracket, $ethnicity, $firstname)";
+$sql = "Insert into $tablename(child_first_name, child_gender, child_age_bracket, child_ethnicity) VALUES ('$firstname', '$gender', '$agebracket', '$ethnicity')";
+if ($conn->query($sql)=== TRUE) {
+    echo "New record created successfully";
+    } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+
+}
+
 $result = mysqli_query($conn, $sql);
+#mysqli_commit(mysqli $link [, int $flags = 0[, string $name ]] ) : bool
 echo "finished";
 ?>
