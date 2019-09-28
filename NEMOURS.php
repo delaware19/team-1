@@ -51,14 +51,32 @@ include_once 'dbh.php';
 
 </form>
 <?php
-$sql = "SELECT * FROM child;";
-$result = mysqli_query($conn, $sql);
-$resultCheck = mysqli_num_rows($result);
-if ($resultCheck > 0) {
-    echo "Made it here";
-    while ($row = mysqli_fetch_assoc($result)){
-        echo $row[child_first_name] . "<br>";
+function getChildren()
+{
+    $sql = "SELECT * FROM child;";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if ($resultCheck > 0) {
+        echo "Made it here";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo $row[child_first_name] . "<br>";
+        }
     }
+}
+
+function insertChild($child_first_name, $child_gender, $child_age_bracket, $child_ethnicity){
+    echo "Insert into child('child_first_name', 'child_gender', 'child_age_bracket', 'child_ethnicity') VALUES ($firstname, $gender, $agebracket, $ethnicity)";
+    $sql = "Insert into child(child_first_name, child_gender, child_age_bracket, child_ethnicity) VALUES ('$firstname', '$gender', '$agebracket', '$ethnicity')";
+    if ($conn->query($sql)=== TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+
+    }
+
+    $result = mysqli_query($conn, $sql);
+#mysqli_commit(mysqli $link [, int $flags = 0[, string $name ]] ) : bool
+    echo "finished";
 }
 ?>
 </body>
