@@ -26,47 +26,30 @@ Boy gets a shot</a></p>
 
 
 <body>
-<form>
+<form action="process.php" method="post">
   <fieldset>
     <legend>Selecting elements</legend>
-    <p> 
+    <p>
       <label>Select list</label>
-      <select id = "myList">
+      <select name = "myList">
 
 <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content">
-    <option value = "One">Boy</option><br/>
-    <option value = "Two">Girl</option><br/>
-    <option value = "Third">Child</option><br> ><br/>
-    <option value = "Fourth">Teen</option><br/>
+    <option value = "value1">Boy</option><br/>
+    <option value = "value2">Girl</option><br/>
+    <option value = "value3">Child</option><br> ><br/>
+    <option value = "value4">Teen</option><br/>
 
  </select>
+  <input type="submit" name="submit" value="get selected values"/>
  </fieldset>
+
 </form>
 </body>
 
+<form action="getName.php" method ="POST">
 <p> Name:
 <input type = input type="text" name="username" required>
 <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+</form>
