@@ -46,36 +46,6 @@ style="width:42px;height:42px;border:0;"></a>
 style="width:42px;height:42px;border:0;"></a>
 
 <body>
-<form action="process.php" method="post">
-  <fieldset>
-    <legend>Selecting elements</legend>
-    <p>
-      <label>Select list</label>
-      <select name = "myList">
-
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <option value = "value1">Boy</option><br/>
-    <option value = "value2">Girl</option><br/>
-
- </select>
-
- <label>Select list</label>
-      <select name = "myList">
-
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <option value = "value3">Child</option><br> ><br/>
-    <option value = "value4">Teen</option><br/>
-
- </select>
-   <input type="submit" name="submit" value="submit"/>
- </fieldset>
-
-</form>
-</body>
 <form action="getName.php" method = "POST">
 
 <element onscroll="myScript">
@@ -84,3 +54,36 @@ style="width:42px;height:42px;border:0;"></a>
 <input type = input type="text" name="username" required>
 <br>
 </form>
+  
+<form action="process.php" method="post">
+  <fieldset>
+    <legend>Selecting elements</legend>
+    <p>
+      <label>Select Gender</label>
+      <select name = "myList">
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <option value = "value1">Boy</option><br/>
+    <option value = "value2">Girl</option><br/>
+    <option value = "value3">Non-binary</option><br/>
+
+ </select>
+
+ <label>Select Age Range</label>
+      <select name = "myList">
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <option value = "value4">Toddler</option><br> ><br/>
+    <option value = "value5">Child</option><br> ><br/>
+    <option value = "value6">Teen</option><br/>
+
+ </select>
+   <input type="submit" name="submit" value="submit"/>
+ </fieldset>
+
+</form>
+</body>
