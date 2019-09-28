@@ -1,9 +1,18 @@
 
-
 <?php
 $username = $_POST['username'];
 
 if(!empty($username)){
-    echo "name imported";
+
+  if(!strcasecmp($username, "Boys")){
+    if()
+  }
+  else if(!strcasecmp($username,"Girls")){
+
+  }
+
 }
+else 
+  echo ($username);
+
 ?>
