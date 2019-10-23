@@ -1,3 +1,5 @@
 This is team 1's project for the nonprofit organization, Nemours.
 This web app is designed to help kids, more specifically austitic kids, prepare for what may happen at their hospital check up.
 Kids will be able to read social stories made to relax their anxiety and reduce chances of the patient feeling like they're going into a place completely unrecognizable.
+
+##### The code ("Code") in this repository was created solely by the student teams during a coding competition hosted by JPMorgan Chase Bank, N.A. ("JPMC").						JPMC did not create or contribute to the development of the Code.  This Code is provided AS IS and JPMC makes no warranty of any kind, express or implied, as to the Code,						including but not limited to, merchantability, satisfactory quality, non-infringement, title or fitness for a particular purpose or use.
